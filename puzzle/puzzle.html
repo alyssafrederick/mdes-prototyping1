@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puzzle!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="myHeader">
+        <button id="colorBtn">generate color</button>
+    </header>
+    <main id="myMainElem">
+        <h1>match the background color!</h1>
+        <p>click generate color and start guessing values 0-255!</p>
+        <p>good luck, you'll probaby need it...</p>
+        <form>
+            <label for="red">red:</label><br>
+            <input type="text" id="redGuess" name="redGuess"><br>
+            <label for="green">green:</label><br>
+            <input type="text" id="greenGuess" name="greenGuess"><br>
+            <label for="blue">blue:</label><br>
+            <input type="text" id="blueGuess" name="blueGuess"><br><br>
+            <button type="button" id="submitButton">submit</button>
+        </form>
+        <p>this is the color you inputted:</p>
+        <div class="box" id="colorBox"></div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
