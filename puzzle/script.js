@@ -1,7 +1,7 @@
 let mainE = document.getElementById("myMainElem")
 let clrButton = document.getElementById("colorBtn")
 let clrBox = document.getElementById("colorBox")
-let guessFeedback = document.querySelectorAll(".guess-feedback")
+let guessFeedback = document.getElementById("guessFeedbackContainer")
 
 let valueR = Math.floor(Math.random() * 255)
 let valueG = Math.floor(Math.random() * 255)
@@ -30,6 +30,7 @@ submitButton.addEventListener("click", function() {
     console.log("green guess: " + greenGuess)
     console.log("blue guess: " + blueGuess)
 
+    guessFeedback.innerHTML = "";
     let feedback = document.createElement('div')
 
     let redUpdate = document.createElement('p')

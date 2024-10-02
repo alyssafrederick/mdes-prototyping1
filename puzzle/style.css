@@ -25,3 +25,12 @@ main {
     height: 50px;
     background-color: black;
 }
+
+div {
+    border-bottom: solid;
+    
+}
+
+div:last-child {
+    border-bottom: none; 
+}
