@@ -1,6 +1,7 @@
 let mainE = document.getElementById("myMainElem")
 let clrButton = document.getElementById("colorBtn")
 let clrBox = document.getElementById("colorBox")
+let guessFeedback = document.querySelectorAll(".guess-feedback")
 
 let valueR = Math.floor(Math.random() * 255)
 let valueG = Math.floor(Math.random() * 255)
@@ -29,24 +30,26 @@ submitButton.addEventListener("click", function() {
     console.log("green guess: " + greenGuess)
     console.log("blue guess: " + blueGuess)
 
+    let feedback = document.createElement('div')
+
     let redUpdate = document.createElement('p')
     let redDiff = Math.abs(valueR - redGuess)
     if (redDiff == 0) {
         console.log("red is correct")
         redUpdate.textContent = "red is correct!"
-        mainE.appendChild(redUpdate)
+        feedback.appendChild(redUpdate)
     } else if (redGuess > valueR && redDiff < 25) {
         redUpdate.textContent = "your guess for red is too high, but close!"
-        mainE.appendChild(redUpdate)
+        feedback.appendChild(redUpdate)
     } else if (redGuess > valueR) {
         redUpdate.textContent = "your guess for red is too high"
-        mainE.appendChild(redUpdate)
+        feedback.appendChild(redUpdate)
     } else if (redGuess < valueR && redDiff < 25) {
         redUpdate.textContent = "your guess for red is too low, but close!"
-        mainE.appendChild(redUpdate)
+        feedback.appendChild(redUpdate)
     } else if (redGuess < valueR) {
         redUpdate.textContent = "your guess for red is too low"
-        mainE.appendChild(redUpdate)
+        feedback.appendChild(redUpdate)
     }
 
     let greenUpdate = document.createElement('p')
@@ -54,19 +57,19 @@ submitButton.addEventListener("click", function() {
     if (greenDiff == 0) {
         console.log("green is correct")
         greenUpdate.textContent = "green is correct!"
-        mainE.appendChild(greenUpdate)
+        feedback.appendChild(greenUpdate)
     } else if (greenGuess > valueG && greenDiff < 25) {
         greenUpdate.textContent = "your guess for green is too high, but close!"
-        mainE.appendChild(greenUpdate)
+        feedback.appendChild(greenUpdate)
     } else if (greenGuess > valueG) {
         greenUpdate.textContent = "your guess for green is too high"
-        mainE.appendChild(greenUpdate)
+        feedback.appendChild(greenUpdate)
     } else if (greenGuess < valueG && greenDiff < 25) {
         greenUpdate.textContent = "your guess for green is too low, but close!"
-        mainE.appendChild(greenUpdate)
+        feedback.appendChild(greenUpdate)
     } else if (greenGuess < valueG) {
         greenUpdate.textContent = "your guess for green is too low"
-        mainE.appendChild(greenUpdate)
+        feedback.appendChild(greenUpdate)
     }
 
     let blueUpdate = document.createElement('p')
@@ -74,21 +77,23 @@ submitButton.addEventListener("click", function() {
     if (blueDiff == 0) {
         console.log("blue is correct")
         blueUpdate.textContent = "blue is correct!"
-        mainE.appendChild(blueUpdate)
+        feedback.appendChild(blueUpdate)
     } else if (blueGuess > valueB && blueDiff < 25) {
         blueUpdate.textContent = "your guess for blue is too high, but close!"
-        mainE.appendChild(blueUpdate)
+        feedback.appendChild(blueUpdate)
     } else if (blueGuess > valueB) {
         blueUpdate.textContent = "your guess for blue is too high"
-        mainE.appendChild(blueUpdate)
+        feedback.appendChild(blueUpdate)
     } else if (blueGuess < valueB && blueDiff < 25) {
         blueUpdate.textContent = "your guess for blue is too low, but close!"
-        mainE.appendChild(blueUpdate)
+        feedback.appendChild(blueUpdate)
     } else if (blueGuess < valueB) {
         blueUpdate.textContent = "your guess for blue is too low"
-        mainE.appendChild(blueUpdate)
+        feedback.appendChild(blueUpdate)
     }
 
+    //guessFeedback[1].remove()
+    mainE.appendChild(feedback)
     colorBox.style.backgroundColor = "rgb(" + redGuess + ", " + greenGuess + ", " + blueGuess + ")"
     
 })
