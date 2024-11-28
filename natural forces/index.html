@@ -8,7 +8,15 @@
 </head>
 <body>
     <h2>natural forces</h2>
-    <p>Still a work in progress!
+    <p>As probably seen through the last assignment, I really like the ability to place and color these particles on screen.
+        So building off of last week a bit, I added in the gravity and thus bouncing aspect of these particles. Additionally I 
+        made sure that when you place a particle, the origial direction of it goes up so we can see the drama of the fall. 
+    </p>
+    <p>
+        I played with the gravity vector, just testing random numbers until I liked how it affected the particles. I wanted it 
+        to look mostly like actual gravity but be a bit dramatized so I settled on gravity = createVector(0, 0.002). This allows 
+        the particles to bounce more times than you would expect in real life but still eventually calm down. I also like how this 
+        number allows the particles to roll around on the floor a bit after they stop bouncing too.
     </p>
     <p>
         <iframe width="500px" 
